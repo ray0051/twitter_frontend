@@ -278,7 +278,7 @@ padding-top: 20px;
    
    
     /* margin: -5px auto 50px; */
-    max-width: 960px;
+    max-width: 452px;
   }
   .layer {
     
@@ -639,7 +639,7 @@ body {
 
 .container {
 	/* margin: 40px auto 50px; */
-	max-width: 960px;
+	max-width: 452px;
 }
 
 // mixins
