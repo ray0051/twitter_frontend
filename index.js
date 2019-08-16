@@ -1,7 +1,18 @@
-$(document).on('click', '.browse', function(){
-    var file = $(this).parent().parent().parent().find('.file');
-    file.trigger('click');
-  });
-  $(document).on('change', '.file', function(){
-    $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
-  });
+function post_text()
+{
+    var x = document.getElementById("tweet");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    } 
+}
+function log_out()
+{
+  var x = document.getElementById("logout");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  } 
+}

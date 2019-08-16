@@ -16,13 +16,30 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="index.js" type="text/javascript"></script>
   <title>Document</title>
 </head>
 <body>
         <div class="row">
                 <div class="column" >
-                  <h2>Column 1</h2>
-                  <p>Some text..</p>
+
+                  
+                    <div class="menu-items">
+                <button class="rcorners1"><i class="fa fa-twitter" style="margin-right: 10px"></i></button>
+                <a href="index.html"> <button class="rcorners2"><i class="fa fa-home" style="margin-right: 10px"></i>Home</button></a>
+                <a href="try.html"><button class="rcorners2"><i class="fa fa-user" style="margin-right: 10px"></i>Profile</button></a>
+                <button class="rcorners2" onclick="log_out()"><i class="fa fa-plus-circle" style="margin-right: 10px"  ></i>More</button>
+                <div id="logout"><button class="rcorners2"><i class="fa fa-sign-out" style="margin-right: 10px"></i>Logout</button></div>
+                
+                <button class="rcorners3" onclick="post_text()">Tweet</button>
+                <div id="tweet">
+                    <textarea rows="4" cols="50" name="post_data"  placeholder=" Whats Happening ?"></textarea>
+                    <input type="file" name="pic" accept="image/*">
+                  
+                 
+                    <button class="rcorners4" >Post</button>
+                </div>
+              </div>
                 </div>
                 <div class="column1" >
         <div class="tweetEntry-tweetHolder center_col" >
