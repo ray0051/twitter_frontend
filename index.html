@@ -16,11 +16,12 @@
     
     <div class="row">
         <div class="column" style="background-color:#aaa;">
-          <h2>Column 1</h2>
+          <h2></h2>
           <p>Some text..</p>
         </div>
         <div class="tweetEntry-tweetHolder center_col" >
-            <h1 class="tweetEntry" style="margin-bottom:0px;">Pure CSS twitter post layout.</h1>
+          
+            <h3 class="tweetEntry" style="margin-bottom:0px;">Home</h3>
             <!---------------------------------------->
             
             <!-- Entry with Media turned on. -->
@@ -55,7 +56,7 @@
               </div>
               
               <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-                <i class="fa fa-reply" style="width: 80px;"></i>
+               
                 <i class="fa fa-retweet" style="width: 80px"></i>
                 <i class="fa fa-heart" style="width: 80px"></i>
               </div>
@@ -94,7 +95,7 @@
               </div>
               
               <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-                <i class="fa fa-reply" style="width: 80px;"></i>
+              
                 <i class="fa fa-retweet" style="width: 80px"></i>
                 <i class="fa fa-heart" style="width: 80px"></i>
               </div>
@@ -133,7 +134,7 @@
               </div>
               
               <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-                <i class="fa fa-reply" style="width: 80px;"></i>
+               
                 <i class="fa fa-retweet" style="width: 80px"></i>
                 <i class="fa fa-heart" style="width: 80px"></i>
               </div>
@@ -141,49 +142,18 @@
             </div>  
             
             <!-- Template Entry -->
-            <div class="tweetEntry">
-              
-              <div class="tweetEntry-content">
-                
-                <a class="tweetEntry-account-group" href="[userURL]">
-                  
-                  <img class="tweetEntry-avatar" src="[avatarSource]">
-                  
-                  <strong class="tweetEntry-fullname">
-                  [displayName]
-                  </strong>
-                  
-                  <span class="tweetEntry-username">
-                    @<b>[username]</b>
-                  </span>
-                  
-                  <span class="tweetEntry-timestamp">- [date]</span>
-                  
-                </a>
-                
-                <div class="tweetEntry-text-container">
-                  [text]
-                </div>
-                
-              </div>
-              
-              <div class="optionalMedia" style="[displayMedia]">
-                <img class="optionalMedia-img" src="[tweetImageLinkSource]">
-              </div>
-              
-              <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-                <i class="fa fa-reply" style="width: 80px;"></i>
-                <i class="fa fa-retweet" style="width: 80px"></i>
-                <i class="fa fa-heart" style="width: 80px"></i>
-              </div>
-              
-            </div>
+         
               
             <!--End of tweetHolder-->
             </div>
-        <div class="column" style="background-color:#ccc;">
-          <h2>Column 3</h2>
-          <p>Some text..</p>
+        <div class="column" >
+          <div id="wrap">
+            <form id="nav-search" class="form-search" action="/search" role="search">
+              <button class="icon" type="submit"></button>
+
+              <input id="search-query" class="search-input" type="text" placeholder="Search" />
+              </form>
+            </div>
         </div>
       </div>
 

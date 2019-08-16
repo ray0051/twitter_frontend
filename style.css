@@ -65,7 +65,7 @@ body {
   }
   .tweetEntry-content {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 58px;
     font-size: 14px;
   }
@@ -80,7 +80,7 @@ body {
     height: 48px;
     width: 48px;
     margin-left: -58px;
-    border-radius: 5px;
+    border-radius: 50%;
   }
   .tweetEntry-fullname {
     font-weight: bold;
@@ -111,8 +111,58 @@ body {
   }
   .optionalMedia-img {
     border-radius: 5px;
-    max-width: 506px;
+    max-width: 465px;
     max-height: 506px;
     
   }
   
+
+  /* column 3 */
+  /* search form */
+#wrap{
+  text-align:center;
+}
+#nav-search {
+  margin: 0 auto;
+  position: relative;
+  width: 202px;
+  margin-top: 30px;
+}
+
+#nav-search input{
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+  width: 214px;
+  height: 28px;
+  padding: 6px 27px 6px 12px;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  background-color: rgb(245, 248, 250);
+  border: none;
+  border-radius: 13px 13px 13px 13px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
+  padding-left: 25px;
+}
+
+#nav-search .icon {
+  position: absolute;
+  padding-top: 10px;
+  display: block;
+  top: 7px;
+  left: 7px;
+  padding-left: 10px;
+  width: 14px;
+  height: 26px;
+  background: url("https://abs.twimg.com/a/1374049044/t1/img/twitter_web_sprite_icons.png") -20px -710px no-repeat transparent;
+  border: none;
+  text-indent: -200px;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+/* profileimage
+ */
+ 

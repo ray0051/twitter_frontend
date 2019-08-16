@@ -1,0 +1,602 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .column1 {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  }
+@-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg) translate(-50%);
+              transform: rotate(0deg) translate(-50%);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) translate(-50%);
+              transform: rotate(360deg) translate(-50%);
+    }
+  }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg) translate(-50%);
+              transform: rotate(0deg) translate(-50%);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) translate(-50%);
+              transform: rotate(360deg) translate(-50%);
+    }
+  }
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+    -webkit-animation: spin 0.35s infinite linear;
+            animation: spin 0.35s infinite linear;
+    border: 2px solid #707070;
+    border-radius: 50%;
+    border-top-color: white;
+    height: 25px;
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    top: 45%;
+    width: 25px;
+  }
+  .hidden-input {
+    left: -999px;
+    position: absolute;
+  }
+  .profile {
+    *zoom: 1;
+    background-color: white;
+    border-radius: 2px;
+    display: block;
+    float: none;
+    margin: 5px auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+    width: 400px;
+  }
+  .profile:before,
+  .profile:after {
+    content: "";
+    display: table;
+  }
+  .profile:after {
+    clear: both;
+  }
+  .about {
+    font-family: Helvetica, "Helvetica Neue", "Tahoma";
+    font-size: 12px;
+    color: #adadad;
+    line-height: 17px;
+  }
+  .image-wrapper {
+    background: rgba(0, 0, 0, 0.2);
+    bottom: -50px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    transition: bottom 0.15s linear;
+    width: 100%;
+  }
+  .edit {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    top: 10px;
+  }
+  .cover {
+    height: 192px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .cover img {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    height: 300px;
+  }
+  .cover .image-wrapper {
+    bottom: auto;
+    height: 45px;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+  }
+  .name {
+    font-family: Helvetica, "Helvetica Neue", "Tahoma";
+    font-size: 18px;
+  }
+  .profile-pic {
+    /*position: absolute; */
+    margin-left: 100px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-radius: 50%;
+    border: 4px solid white;
+    height: 210px;
+    overflow: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    width: 210px;
+    top: 0;
+  }
+  .profile-pic img {
+    box-sizing: border-box;
+    height: 100%;
+    left: 50%;
+    max-height: 100%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    transition: all 0.15s ease-out;
+    width: auto;
+  }
+  .profile-pic:hover .image-wrapper {
+    bottom: 0;
+  }
+  .username {
+    margin-top: 122px;
+    text-align: center;
+  }
+  .user-info {
+    *zoom: 1;
+    padding: 8px;
+    position: relative;
+  }
+  .user-info:before,
+  .user-info:after {
+    content: "";
+    display: table;
+  }
+  .user-info:after {
+    clear: both;
+  }
+  
+  .container {
+    margin: -5px auto 50px;
+    max-width: 960px;
+  }
+  .layer {
+    
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .layer.visible {
+    display: block;
+  }
+    /* column 3 */
+  /* search form */
+#wrap{
+    text-align:center;
+  }
+  #nav-search {
+    margin: 0 auto;
+    position: relative;
+    width: 202px;
+    margin-top: 30px;
+  }
+  
+  #nav-search input{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+    width: 214px;
+    height: 28px;
+    padding: 6px 27px 6px 12px;
+    cursor: pointer;
+    color: rgb(102, 102, 102);
+    background-color: rgb(245, 248, 250);
+    border: none;
+    border-radius: 13px 13px 13px 13px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
+    padding-left: 25px;
+  }
+  
+  #nav-search .icon {
+    position: absolute;
+    padding-top: 10px;
+    display: block;
+    top: 7px;
+    left: 7px;
+    padding-left: 10px;
+    width: 14px;
+    height: 26px;
+    background: url("https://abs.twimg.com/a/1374049044/t1/img/twitter_web_sprite_icons.png") -20px -710px no-repeat transparent;
+    border: none;
+    text-indent: -200px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+
+  body {
+    font-family: Arial,sans-serif;
+    color: #292f33;
+    margin:10px;
+  }
+  .column {
+    float: left;
+    width: 30%;
+    padding-left: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+  /* This element would be replaced by where you want the templates. */
+  .tweetEntry-tweetHolder {
+    border-left: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+    /* border-top: 1px solid #e1e8ed; */
+    width: 588px;
+   
+    border-radius: 5px;
+  }
+  .changeCover{
+      background: transparent;
+  }
+  .center_col
+  {
+    width: 100%;
+    padding: -2px;
+  }
+  
+  /* The action list is optional. */
+  .tweetEntry-action-list {
+    display: block;
+    line-height: 18px;
+    margin-left: 58px;
+    margin-top: 10px;
+    color: #292f33;
+  }
+  .fa-reply:hover {
+    color: #292f33;
+  }
+  .fa-retweet:hover {
+    color: #5cd65c;
+  }
+  .fa-heart:hover {
+    color: #ff3333;
+  }
+  /************************/
+  
+  .tweetEntry {
+    border-bottom: 1px solid #e1e8ed;
+    cursor: pointer;
+    min-height: 51px;
+    padding: 9px 12px;
+  }
+  .tweetEntry-content {
+    display: block;
+    font-size: 12px;
+    margin-left: 58px;
+    font-size: 14px;
+  }
+  .tweetEntry-account-group {
+    color: #8899a6;
+    padding: 0px;
+    text-decoration: none;
+    line-height: 20px;
+  }
+  .tweetEntry-avatar {
+    float: left;
+    height: 48px;
+    width: 48px;
+    margin-left: -58px;
+    border-radius: 50%;
+  }
+  .tweetEntry-fullname {
+    font-weight: bold;
+    font-size: 14px;
+    color: #292f33;
+    padding: 0px;
+  }
+  .tweetEntry-username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #b1bbc3;
+    padding: 0px;
+  }
+  .tweetEntry-timestamp {
+    font-size: 14px;
+    color: #b1bbc3;
+    padding: 0px;
+  }
+  .tweetEntry-text-container {
+    font-size: 14px;
+    color: #292f33;
+    line-height: 18px;
+  }
+  
+  .optionalMedia {
+    margin-left: 58px;
+    margin-top: 10px;
+  }
+  .optionalMedia-img {
+    border-radius: 5px;
+    max-width: 460px;
+    max-height: 506px;
+    
+  }
+  
+
+  /* column 3 */
+  /* search form */
+#wrap{
+  text-align:center;
+}
+#nav-search {
+  margin: 0 auto;
+  position: relative;
+  width: 202px;
+  margin-top: 30px;
+}
+.name{
+    font-size: 12px;
+}
+#nav-search input{
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+  width: 214px;
+  height: 28px;
+  padding: 6px 27px 6px 12px;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  background-color: rgb(245, 248, 250);
+  border: none;
+  border-radius: 13px 13px 13px 13px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
+  padding-left: 25px;
+}
+
+#nav-search .icon {
+  position: absolute;
+  padding-top: 10px;
+  display: block;
+  top: 7px;
+  left: 7px;
+  padding-left: 10px;
+  width: 14px;
+  height: 26px;
+  background: url("https://abs.twimg.com/a/1374049044/t1/img/twitter_web_sprite_icons.png") -20px -710px no-repeat transparent;
+  border: none;
+  text-indent: -200px;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+/* profileimage
+ */
+ @keyframes spin {
+	0% {
+		transform: rotate(0deg) translate(-50%);
+	}
+	100% {
+		transform: rotate(360deg) translate(-50%);
+	}
+}
+
+.loader {
+	.center;
+	animation: spin 0.35s infinite linear;
+	border: 2px solid #707070;
+	border-radius: 50%;
+	border-top-color: white;
+	height: 25px;
+	transform-origin: left;
+	top: 45%;
+	width: 25px;
+}
+
+.hidden-input {
+	left: -999px;
+	position: absolute;
+}
+
+.profile {
+	.clear;
+	background-color: white;
+	border-radius: 2px;
+	display: block;
+	float: none;
+	margin: 5px auto;
+	overflow: hidden;
+	padding-bottom: 20px;
+	width: 400px;
+}
+
+.about {
+	.sans-serif(12px);
+	color: @light-grey;
+	line-height: 17px;
+}
+
+.image-wrapper {
+	background: rgba(0, 0, 0, 0.2);
+	bottom: -50px;
+	height: 50px;
+	left: 0;
+	position: absolute;
+	transition: bottom 0.15s linear;
+	width: 100%;
+}
+
+.edit {
+	.h-align;
+	color: white;
+	cursor: pointer;
+	font-size: 22px;
+	top: 10px;
+}
+
+.cover {
+	height: 192px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	img {
+		.h-align(absolute);
+		height: 300px;
+	}
+	.image-wrapper {
+		bottom: auto;
+		height: 45px;
+		left: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 45px;
+	}
+}
+
+.name {
+    .sans-serif(12px);
+    
+}
+
+.profile-pic {
+	.h-align(absolute);
+	border-radius: 50%;
+	border: 4px solid white;
+	height: 210px;
+	overflow: hidden;
+	transform: translateX(-50%) translateY(-50%);
+	width: 210px;
+	top: 0;
+	img {
+		box-sizing: border-box;
+		height: 100%;
+		left: 50%;
+		max-height: 100%;
+		position: absolute;
+		transform: translateX(-50%);
+		transition: all 0.15s ease-out;
+		width: auto;
+	}
+	&:hover .image-wrapper {
+		bottom: 0;
+	}
+}
+
+.username {
+	margin-top: 122px;
+	text-align: left;
+}
+
+.user-info {
+	.clear;
+	padding: 8px;
+	position: relative;
+}
+
+// global stuff
+body {
+	background-color: #202020;
+}
+
+.container {
+	/* margin: 40px auto 50px; */
+	max-width: 960px;
+}
+
+// mixins
+@sans-serif: Helvetica,
+"Helvetica Neue",
+"Tahoma";
+@grey: #7a7a7a;
+@light-grey: lighten(@grey, 20%);
+
+.sans-serif(@font-size) {
+	font-family: @sans-serif;
+	font-size: @font-size;
+}
+
+.center (@position: absolute) {
+	position: @position;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+
+.clear() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.h-align(@position: relative) {
+	position: @position;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.layer {
+	background-color: rgba(0, 0, 0, 0.25);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	
+	&.visible {
+		display: block;
+	}
+}
